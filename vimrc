@@ -20,7 +20,7 @@ set relativenumber
 set cursorline
 set cursorcolumn
 highlight CursorLine term=bold cterm=bold ctermbg=DarkGray
-highlight Cursorcolumn ctermbg=DarkGray
+highlight CursorColumn ctermbg=DarkGray
 set textwidth=80
 set ruler
 set showmatch

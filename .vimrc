@@ -16,7 +16,6 @@ syntax on
 set t_Co=256
 filetype indent on
 set autoindent
-set tabstop=2
 set relativenumber
 set cursorline
 set cursorcolumn

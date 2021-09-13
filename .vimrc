@@ -7,7 +7,7 @@ set nowrap
 set incsearch
 set scrolloff=8
 set clipboard+=unnamedplus
-set cuc
+set cuc cul
 set encoding=utf-8
 set shiftwidth=4
 set softtabstop=4
@@ -17,8 +17,6 @@ set t_Co=256
 filetype indent on
 set autoindent
 set relativenumber
-set cursorline
-set cursorcolumn
 highlight CursorLine term=bold cterm=bold ctermbg=DarkGray
 highlight CursorColumn ctermbg=DarkGray
 set textwidth=80

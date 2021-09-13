@@ -28,6 +28,8 @@ filetype indent on
 imap {<CR> {<CR>}<ESC>0
 imap [ []<LEFT>
 imap ( ()<LEFT>
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'

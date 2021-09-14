@@ -25,7 +25,7 @@ set wildmenu
 syntax on
 
 filetype indent on
-imap {<CR> {<CR>}<ESC>0
+imap { {}<ESC>i<CR><ESC>ko
 imap [ []<LEFT>
 imap ( ()<LEFT>
 vnoremap J :m '>+1<CR>gv=gv

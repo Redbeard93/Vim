@@ -24,7 +24,7 @@ set wildmode=longest,list,full
 set wildmenu
 syntax on
 
-filetype indent on
+
 imap { {}<ESC>i<CR><ESC>ko
 imap [ []<LEFT>
 imap ( ()<LEFT>

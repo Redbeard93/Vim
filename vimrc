@@ -1,5 +1,7 @@
 "13/SEP/2021 Updated
 "Vimrc注释的语法是"不是#，#会报错
+set suffixesadd=.java
+set nocompatible
 set exrc
 set backspace=indent,eol,start
 set hidden
@@ -23,8 +25,9 @@ set cuc cul
 set wildmode=longest,list,full
 set wildmenu
 syntax on
+filetype plugin indent on
 
-
+let mapleader = " "
 imap { {}<ESC>i<CR><ESC>ko
 imap [ []<LEFT>
 imap ( ()<LEFT>
@@ -33,6 +36,8 @@ vnoremap K :m '<-2<CR>gv=gv
 
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 colorscheme gruvbox
@@ -49,7 +54,13 @@ fun! TrimWhitespace()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
+
 augroup Trim
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+augroup END
+
+augroup Java
+    autocmd!
+    autocmd FileType java setlocal omnifunc=javacomplete#Complete
 augroup END

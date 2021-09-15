@@ -42,3 +42,63 @@ call plug#begin()
 
 
 call plug#end()
+package com.kkb.views;
+
+import java.util.Scanner;
+import com.kkb.exception.OutNumBoundException;
+
+public class Views {
+    private Scanner input = new Scanner(System.in);
+
+    public int menu(){
+        int num=0;
+        do{
+            System.out.println("请输入年：");
+            String strNum=input.nextLine();
+            int num=Integer.valueOf(strNum);
+            try {
+                num=validateNum(strNum, 1, 12);
+                break;
+            }catch (NumberFormateException e){
+                System.out.println(e.getMessage());
+            }catch (OutNumBoundException e){
+                System.out.println(e.getMessage());
+            }
+            System.out.println("请输入月：");
+            String strNum=input.nextLine();
+            int num=Integer.valueOf(strNum);
+            try {
+                num=validateNum(strNum, 1, 12);
+                break;
+            }catch (NumberFormateException e){
+                System.out.println(e.getMessage());
+            }catch (OutNumBoundException e){
+                System.out.println(e.getMessage());
+            }
+            System.out.println("输入0退出");
+            String strNum=input.nextLine();
+            int num=Integer.valueOf(strNum);
+            try {
+                num=validateNum(strNum);
+                break;
+            }catch (NumberFormateException e){
+                System.out.println(e.getMessage());
+            }
+        }while(true);
+        return num;
+    }
+
+
+    private int validateNum(String strNum, int begin, int end) throws NumberFormateException,OutNumBoundException{
+        try {
+            int num=Integer.valueOf(StrNum);
+            if(num<begin || num>end){
+                throw new OutNumBoundException("数字在"+begin+"和"+end+"之间！");
+            }
+            return num;
+        }catch (NumberFormateException exception){
+            throw new NumberFormateException("输入的必须是数字！");
+        }
+    }
+
+}

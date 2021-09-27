@@ -42,7 +42,7 @@ nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :q!<CR>
-let g:netrw_browse_split = 2
+let g:netrw_browse_split = 3
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 

@@ -24,6 +24,7 @@ set signcolumn=yes
 set cuc cul
 set wildmode=longest,list,full
 set wildmenu
+set showcmd
 syntax on
 filetype plugin indent on
 
@@ -46,6 +47,24 @@ let g:netrw_browse_split = 3
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_list_hide= '^\..*,.*\.swp$,\~$,\.orig$'
+
+"Status Bar
+set laststatus=2
+set statusline=
+set statusline+=%.33F
+set statusline+=\ -
+set statusline+=\ FileType:
+set statusline+=%y
+set statusline+=%=
+set statusline+=\ [%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ -
+set statusline+=%l
+set statusline+=\ |
+set statusline+=%c
+set statusline+=\ %L
+
 
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'

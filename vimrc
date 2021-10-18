@@ -1,5 +1,6 @@
 "13/SEP/2021 Updated
 "Vimrc注释的语法是"不是#，#会报错
+set path=.,**
 set suffixesadd=.java
 set nocompatible
 set exrc

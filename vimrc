@@ -49,6 +49,10 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_list_hide= '^\..*,.*\.swp$,\~$,\.orig$'
 
+
+"YCM自动关闭预览窗口
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 "Status Bar
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")

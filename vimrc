@@ -33,6 +33,25 @@ let mapleader = " "
 imap { {}<ESC>i<CR><ESC>ko
 imap [ []<LEFT>
 imap ( ()<LEFT>
+
+"跳过右括号
+inoremap ] <c-r>=SkipSquarebrackets()<CR>
+inoremap ) <c-r>=SkipParentheses()<CR>
+func SkipParentheses()
+    if getline('.')[col('.') - 1] == ')'
+        return "\<ESC>la"
+    else
+        return ")"
+    endif
+endfunc
+func SkipSquarebrackets()
+    if getline('.')[col('.') - 1] == ']'
+        return "\<ESC>la"
+    else
+        return "]"
+    endif
+endfunc
+
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 

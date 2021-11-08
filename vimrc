@@ -33,6 +33,7 @@ let mapleader = " "
 imap { {}<ESC>i<CR><ESC>ko
 imap [ []<LEFT>
 imap ( ()<LEFT>
+inoremap <c-d> <DELETE>
 
 "跳过右括号
 inoremap ] <c-r>=SkipSquarebrackets()<CR>

@@ -30,9 +30,9 @@ syntax on
 filetype plugin indent on
 
 let mapleader = " "
-imap { {}<ESC>i<CR><ESC>ko
-imap [ []<LEFT>
-imap ( ()<LEFT>
+inoremap { {}<ESC>i<CR><ESC>ko
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
 inoremap <c-d> <DELETE>
 
 "跳过右括号

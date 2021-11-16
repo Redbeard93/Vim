@@ -56,19 +56,42 @@ endfunc
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+"tabs manipulating
+nn <M-1> 1gt
+nn <M-2> 2gt
+nn <M-3> 3gt
+nn <M-4> 4gt
+nn <M-5> 5gt
+nn <M-6> 6gt
+nn <M-7> 7gt
+nn <M-8> 8gt
+nn <M-9> 9gt
+nn <M-0> :tablast<CR>
+
 "filetree
-nnoremap <leader>ft :Lexplore<CR>
-nnoremap <leader>fr :vertical resize 30<CR>
-nnoremap <leader>wr :vertical resize 90<CR>
-nnoremap <leader>+ :vertical resize +5<CR>
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>q :q!<CR>
+
+let g:netrw_winsize = 75
 let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+let g:netrw_altv = 1
 let g:netrw_list_hide= '^\..*,.*\.swp$,\~$,\.orig$'
 
+nnoremap <leader><tab> :25Lexplore<CR>
+nnoremap <leader>fr :vertical resize 30<CR>
+nnoremap <leader>wr :vertical resize 90<CR>
+nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>q :q!<CR>
+
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :25Lexplore
+augroup END
 
 "YCM自动关闭预览窗口
 let g:ycm_autoclose_preview_window_after_insertion = 1

@@ -68,24 +68,30 @@ nn <M-7> 7gt
 nn <M-8> 8gt
 nn <M-9> 9gt
 nn <M-0> :tablast<CR>
+
 "filetree
-nnoremap <leader>ft :Lexplore<CR>
+
+let g:netrw_winsize = 75
+let g:netrw_browse_split = 4
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_altv = 1
+let g:netrw_list_hide= '^\..*,.*\.swp$,\~$,\.orig$'
+
+nnoremap <leader><tab> :25Lexplore<CR>
 nnoremap <leader>fr :vertical resize 30<CR>
 nnoremap <leader>wr :vertical resize 90<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>q :q!<CR>
-let g:netrw_winsize = 25
-let g:netrw_browse_split = 4
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_altv = 1
-let g:netrw_list_hide= '^\..*,.*\.swp$,\~$,\.orig$'
+
 augroup ProjectDrawer
   autocmd!
-  autocmd VimEnter * :Vexplore
+  autocmd VimEnter * :25Lexplore
 augroup END
 
 "Status Bar

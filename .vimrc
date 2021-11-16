@@ -57,14 +57,14 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 "filetree
-nnoremap <leader>ft :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>ft :Lexplore<CR>
 nnoremap <leader>fr :vertical resize 30<CR>
 nnoremap <leader>wr :vertical resize 90<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :q!<CR>
-let g:netrw_browse_split = 3
+let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_list_hide= '^\..*,.*\.swp$,\~$,\.orig$'

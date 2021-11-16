@@ -69,7 +69,7 @@ nn <M-8> 8gt
 nn <M-9> 9gt
 nn <M-0> :tablast<CR>
 "filetree
-nnoremap <leader>ft :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
+nnoremap <leader>ft :Lexplore<CR>
 nnoremap <leader>fr :vertical resize 30<CR>
 nnoremap <leader>wr :vertical resize 90<CR>
 nnoremap <leader>+ :vertical resize +5<CR>

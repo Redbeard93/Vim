@@ -36,7 +36,7 @@ inoremap ( ()<LEFT>
 inoremap <c-d> <DELETE>
 
 "Open up a terminal at the bottom of current window for execing code test
-nnoremap <leader>t :bo terminal<CR> <c-w>:resize 11<CR>
+nnoremap <leader>t :bo terminal<CR> <c-w>:resize 12<CR>
 
 "跳过右括号
 inoremap ] <c-r>=SkipSquarebrackets()<CR>

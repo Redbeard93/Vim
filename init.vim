@@ -28,12 +28,17 @@ set showcmd
 syntax on
 filetype plugin indent on
 
+" open up a terminal window
+nnoremap <leader>t :bo 12new<CR>:terminal<CR>
+nnoremap <leader>tr :resize 12<CR>
+
 "Pairs
 let mapleader = " "
 inoremap { {}<ESC>i<CR><ESC>ko
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap <c-d> <DELETE>
+
 inoremap ] <c-r>=SkipSquarebrackets()<CR>
 inoremap ) <c-r>=SkipParentheses()<CR>
 

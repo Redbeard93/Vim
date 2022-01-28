@@ -12,7 +12,8 @@ https://stackoverflow.com/questions/6987317/while-moving-the-cursor-across-a-vim
 
 UPDATE: I figured out the cause. I had added to functions that automatically updated the cwd name and the current git branch in my vim statusline. This caused vim to be laggy and everytime it lagged on a up/down/left/right key hit, it printed out the ghost characters ^[OA, etc. It's possible that stuff got complicated because I was using vim in tmux, but I saw the ghost characters outside tmux also. So, probably not. I've turned off those two functions in my .vimrc and my vim statusline is presently less awesome than it used to be :( Wish there's a way out.
 
-# Java Compiler Setting with makeprg in .vim/compiler/javac.vim(make it up)(current working directory has to be the project root directory and has to have bin/ under project root directory just like IDE)
+# Java Compiler Setting with makeprg in .vim/compiler/javac.vim(make it up)
+(current working directory has to be the project root directory and has to have bin/ under project root directory just like IDE)
 
 "Avoid loading twice from autocommands
 if exists("current_compiler")
@@ -39,3 +40,4 @@ CompilerSet errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 compiler javac
 noremap <buffer> <leader>m :w<CR>:make<CR>:cwindow<CR>
 noremap <buffer> <leader>r :!clear;echo <C-r>=expand('%:t:r')<CR> \| xargs java<CR>
+(How to run it: java -cp "bin[如果右jar包在lib文件夹则加''' :lib/* ''']" file name)

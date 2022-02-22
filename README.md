@@ -1,7 +1,17 @@
 # Vim
-配置文件  
+
+.initrc is for *Neovim*
+
+配置文件 
+
+
 https://www.reddit.com/r/vim/comments/gbfy8u/set_vim_theme_but_also_keeping_the_terminal/  
-```gg=G``` indent everything  
+
+```
+gg=G
+
+``` 
+indent everything  
 
 
 While moving the cursor across a vim process open in a tmux session, every now and then, why does it leave a trail of ghost characters - ^[OB, ^[OA?  

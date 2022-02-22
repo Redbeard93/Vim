@@ -1,6 +1,6 @@
 # Vim
 
-.initrc is for *Neovim*
+init.vim is for *Neovim*
 
 配置文件 
 

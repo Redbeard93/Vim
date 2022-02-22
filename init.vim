@@ -386,6 +386,9 @@ EOF
 "Markdown-preview settings
 let g:mkdp_refresh_slow=1
 let g:mkdp_markdown_css='/home/o/.local/lib/github-mkdp_markdown_css/github-markdown.css'
+let g:mkdp_browser = '/home/o/surf/surf'
+nmap <leader>mp <Plug>MarkdownPreview
+nmap <leader>ms <Plug>MarkdownPreviewStop
 
 "Markdown Title settings
 #!vim

@@ -1,4 +1,5 @@
-"Neovim init.vim file
+" Neovim init.vim file
+
 set path=.,**
 set suffixesadd=.java
 set exrc
@@ -28,11 +29,23 @@ set showcmd
 syntax on
 filetype plugin indent on
 
+"Undo settings
+
+silent !mkdir -p ~/.config/nvim/tmp/backup
+silent !mkdir -p ~/.config/nvim/tmp/undo
+set backupdir=~/.config/nvim/tmp/backup,.
+set directory=~/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+    set undofile
+    set undodir=~/.config/nvim/tmp/undo,.
+endif
+
 " open up a terminal window
 nnoremap <leader>t :bo 12new<CR>:terminal<CR>
 nnoremap <leader>tr :resize 12<CR>
 
 "Pairs
+
 let mapleader = " "
 inoremap { {}<ESC>i<CR><ESC>ko
 inoremap [ []<LEFT>
@@ -59,10 +72,12 @@ func SkipSquarebrackets()
 endfunc
 
 "move visual selected
+
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 "tabs manipulating
+
 nn <M-1> 1gt
 nn <M-2> 2gt
 nn <M-3> 3gt
@@ -75,6 +90,7 @@ nn <M-9> 9gt
 nn <M-0> :tablast<CR>
 
 "filetree
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "VERSION 1 (Simple)
  "let g:netrw_winsize = 75
@@ -99,8 +115,10 @@ nn <M-0> :tablast<CR>
  "  autocmd!
  "  autocmd VimEnter * :25Lexplore
  "augroup END
+ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "VERSION 2
+
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
@@ -146,6 +164,7 @@ augroup netrw_mappings
 augroup END
 
 " Allow for netrw to be toggled
+
 function! ToggleNetrw()
 		if g:NetrwIsOpen
 				let i = bufnr("$")
@@ -163,9 +182,11 @@ function! ToggleNetrw()
 endfunction
 
 " Close Netrw if it's the only buffer open
+
 autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
 
 " Check before opening buffer on any file
+
 function! NetrwOnBufferOpen()
     if exists('b:noNetrw')
         return
@@ -174,6 +195,7 @@ function! NetrwOnBufferOpen()
 endfun
 
 " Make netrw act like a project Draw
+
 augroup ProjectDrawer
     autocmd!
     " Don't open Netrw
@@ -182,9 +204,11 @@ augroup ProjectDrawer
 augroup END
 
 let g:NetrwIsOpen=0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Status Bar
+
 function! GitBranch()
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
@@ -227,9 +251,11 @@ Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for':
 call plug#end()
 
 "YCM自动关闭预览窗口
+
 "let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "JAVACOMPLETE
+
 "nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 "imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 "nmap <F5> <Plug>(JavaComplete-Imports-Add)
@@ -241,6 +267,7 @@ call plug#end()
 "nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
 "gruvbox
+
 colorscheme gruvbox
 set background=dark
 highlight Normal ctermbg=NONE guibg=NONE
@@ -252,6 +279,7 @@ let g:gruvbox_transparent_bg=1
 
 "autocmd
 "trimwhitespace
+
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -430,10 +458,12 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "IndentLine
+
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
 let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进
 
 "RAINBOW
+
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
@@ -459,6 +489,7 @@ let g:rainbow_conf = {
 \}
 
 "nvim-treesitter
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -469,6 +500,7 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "Markdown-preview settings
+
 let g:mkdp_refresh_slow=1
 let g:mkdp_markdown_css='/home/o/.local/lib/github-mkdp_markdown_css/github-markdown.css'
 let g:mkdp_browser = '/home/o/surf/surf'
@@ -476,6 +508,7 @@ nmap <leader>mp <Plug>MarkdownPreview
 nmap <leader>ms <Plug>MarkdownPreviewStop
 
 "Markdown Title settings
+
 #!vim
 function! MDTitleInsert()
 call setline(1,'<meta name="viewport" content="width=device-width, initial-scale=1">')

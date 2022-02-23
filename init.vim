@@ -272,6 +272,7 @@ colorscheme gruvbox
 set background=dark
 highlight Normal ctermbg=NONE guibg=NONE
 highlight LineNr ctermbg=NONE guibg=NONE
+highlight CursorLineNr ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 highlight CursorLine term=bold cterm=bold ctermbg=NONE
 highlight CursorColumn term=bold cterm=bold ctermbg=NONE

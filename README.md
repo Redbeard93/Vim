@@ -55,3 +55,9 @@ How to run it:
 ```
 java -cp "bin[如果右jar包在lib文件夹则加''' :lib/* ''']" file name
 ```
+# Vim Java compiler & ftplugin
+
+javac.vim 与 java.vim的使用方式：放在这里：
+
+`/.config/nvim/compiler/javac.vim`
+`/.config/nvim/ftplugin/java.vim`

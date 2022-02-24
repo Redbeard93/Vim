@@ -316,6 +316,9 @@ highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
+"去掉NonText和EndOfBuffer的~标志nvim only
+"for vim try :hi NonText ctermfg=bg guifg=bg
+set fillchars=eob:\ ,fold:\ ,vert:\|
 
 "autocmd
 "trimwhitespace

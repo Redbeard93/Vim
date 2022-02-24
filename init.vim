@@ -281,6 +281,7 @@ highlight StatusLineNC ctermbg=NONE guibg=NONE
 highlight LineNrBelow cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
 highlight LineNrAbove cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
 highlight CursorLineNr cterm=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
+highlight ColorColumn ctermbg=Black guibg=#100D23
 highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 highlight CursorLine term=bold cterm=bold ctermbg=NONE
 highlight CursorColumn term=bold cterm=bold ctermbg=NONE

@@ -1,6 +1,8 @@
 " Neovim init.vim file
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Basics
+
 set termguicolors
-set ruler
 set path=.,**
 set suffixesadd=.java
 set exrc
@@ -29,11 +31,11 @@ set wildmenu
 set showcmd
 syntax on
 filetype plugin indent on
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 在被分割的窗口间显示空白，便于阅读
 
 set fillchars="vert:│,fold:·,sep:│"
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Undo settings
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -45,10 +47,11 @@ if has('persistent_undo')
     set undodir=~/.config/nvim/tmp/undo,.
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " open up a terminal window
 nnoremap <leader>t :bo 12new<CR>:terminal<CR>
 nnoremap <leader>tr :resize 12<CR>
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Pairs
 
 let mapleader = " "
@@ -56,7 +59,8 @@ inoremap { {}<ESC>i<CR><ESC>ko
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap <c-d> <DELETE>
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"括号补全
 inoremap ] <c-r>=SkipSquarebrackets()<CR>
 inoremap ) <c-r>=SkipParentheses()<CR>
 
@@ -75,12 +79,13 @@ func SkipSquarebrackets()
         return "]"
     endif
 endfunc
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "move visual selected
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "tabs manipulating
 
 nn <M-1> 1gt
@@ -94,6 +99,7 @@ nn <M-8> 8gt
 nn <M-9> 9gt
 nn <M-0> :tablast<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "filetree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -211,7 +217,6 @@ augroup END
 let g:NetrwIsOpen=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 "Status Bar
 
 function! GitBranch()
@@ -240,11 +245,14 @@ set statusline+=\|
 set statusline+=%c
 set statusline+=\ %L
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plugin
+
 call plug#begin('~/.vim/plugged')
 Plug 'beeender/Comrade'
 Plug 'nvim-treesitter/nvim-treesitter',{'do': ':TSUpdate'}
 Plug 'Yggdroot/indentLine'
-Plug 'luochen1990/rainbow'
+"Plug 'luochen1990/rainbow'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'gruvbox-community/gruvbox'
@@ -255,22 +263,7 @@ Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for':
 "Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
-"YCM自动关闭预览窗口
-
-"let g:ycm_autoclose_preview_window_after_insertion = 1
-
-"JAVACOMPLETE
-
-"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-"nmap <F5> <Plug>(JavaComplete-Imports-Add)
-"imap <F5> <Plug>(JavaComplete-Imports-Add)
-"nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-"imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-"nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-"imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-"nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "ColorScheme
 
@@ -322,7 +315,10 @@ highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
 
 set fillchars=eob:\ ,fold:\ ,vert:\|
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "trimwhitespace
 
 "fun! TrimWhitespace()
@@ -340,6 +336,9 @@ set fillchars=eob:\ ,fold:\ ,vert:\|
 "    autocmd!
 "    autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Coc
 
 " 设置vim的内部编码，在neovim上不需要，因为coc.nvim使用了一些
 " autoload / float.vim文件中的unicode字符
@@ -501,38 +500,12 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "IndentLine
 
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
 let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进
-
-"RAINBOW
-
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
-\   'ctermfgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\       '*': {},
-\       'tex': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\       },
-\       'lisp': {
-\           'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
-\       },
-\       'vim': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\       },
-\       'html': {
-\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-\       },
-\       'css': 0,
-\   }
-\}
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "nvim-treesitter
 
 lua <<EOF
@@ -543,7 +516,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Markdown-preview settings
 
 let g:mkdp_refresh_slow=1
@@ -551,7 +524,7 @@ let g:mkdp_markdown_css='/home/o/.local/lib/github-mkdp_markdown_css/github-mark
 let g:mkdp_browser = '/home/o/surf/surf'
 nmap <leader>mp <Plug>MarkdownPreview
 nmap <leader>ms <Plug>MarkdownPreviewStop
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Markdown Title settings
 
 #!vim
@@ -594,6 +567,7 @@ endfunction
 :map <F2> :call MDTitleInsert()<CR>ggjjA
 :autocmd FileWritePre,BufWritePre *.md ks|call DateInsert()|'s
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "C++ title settings
 
 #!vim
@@ -626,3 +600,5 @@ endfunction
 
 :map <F3> :call CPPTitleInsert()<CR>ggjjA
 :autocmd FileWritePre,BufWritePre *.cpp ks|call DateInsert()|'s
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin settings Graveyard

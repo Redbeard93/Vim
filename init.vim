@@ -273,14 +273,35 @@ call plug#end()
 "colorscheme gruvbox
 "set background=dark
 "let g:gruvbox_transparent_bg=1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Version 1 cyberpunk high contrast scheme
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight StatusLine ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight StatusLineNC ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight TabLineSel gui=bold ctermbg=NONE guibg=#9E619E guifg=#100D23
+highlight TabLineFill ctermbg=NONE guibg=#372963 guifg=#619E9E
+highlight TabLine gui=NONE ctermbg=NONE guibg=#619E9E guifg=#372963
+"highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
+highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#619E9E
+highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#9E619E
+highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
+highlight ColorColumn ctermbg=Black guibg=#100D23
+highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Version 2 cyberpunk scheme
 
 highlight Normal ctermbg=NONE guibg=NONE
 highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight StatusLine ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight StatusLineNC ctermbg=NONE guibg=NONE guibg=#9E619E guifg=#100D23
-highlight TabLine ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight TabLineFill ctermbg=NONE guibg=NONE guibg=#9E619E guifg=#100D23
-highlight TabLineSel ctermbg=NONE guibg=NONE guibg=#372963 guifg=#619E9E
+highlight StatusLineNC ctermbg=NONE guibg=#9E619E guifg=#100D23
+highlight TabLine gui=None ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight TabLineFill ctermbg=NONE gui=NONE guibg=#9E619E guifg=#100D23
+highlight TabLineSel ctermbg=NONE gui=bold guibg=#372963 guifg=#619E9E
 "highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
 highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
 highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E

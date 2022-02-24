@@ -1,5 +1,6 @@
 " Neovim init.vim file
-
+set termguicolors
+set ruler
 set path=.,**
 set suffixesadd=.java
 set exrc
@@ -274,17 +275,17 @@ call plug#end()
 "let g:gruvbox_transparent_bg=1
 
 highlight Normal ctermbg=NONE guibg=NONE
-highlight Pmenu cterm=bold ctermbg=NONE guibg=NONE
+highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight StatusLine ctermbg=NONE guibg=NONE
 highlight StatusLineNC ctermbg=NONE guibg=NONE
 "highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
-highlight LineNrBelow cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
-highlight LineNrAbove cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
-highlight CursorLineNr cterm=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
+highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
+highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
+highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
 highlight ColorColumn ctermbg=Black guibg=#100D23
 highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
-highlight CursorLine term=bold cterm=bold ctermbg=NONE
-highlight CursorColumn term=bold cterm=bold ctermbg=NONE
+highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
 
 "autocmd
 "trimwhitespace

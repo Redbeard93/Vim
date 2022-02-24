@@ -276,8 +276,11 @@ call plug#end()
 
 highlight Normal ctermbg=NONE guibg=NONE
 highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight StatusLine ctermbg=NONE guibg=NONE
-highlight StatusLineNC ctermbg=NONE guibg=NONE
+highlight StatusLine ctermbg=NONE guibg=#9E619E guifg=#100D23
+highlight StatusLineNC ctermbg=NONE guibg=NONE guibg=#9E619E guifg=#100D23
+highlight TabLine ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight TabLineFill ctermbg=NONE guibg=NONE guibg=#9E619E guifg=#100D23
+highlight TabLineSel ctermbg=NONE guibg=NONE guibg=#372963 guifg=#619E9E
 "highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
 highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
 highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E

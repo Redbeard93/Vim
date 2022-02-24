@@ -330,7 +330,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'beeender/Comrade'
 Plug 'nvim-treesitter/nvim-treesitter',{'do': ':TSUpdate'}
 Plug 'Yggdroot/indentLine'
-"Plug 'luochen1990/rainbow'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'godlygeek/tabular'

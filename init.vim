@@ -316,23 +316,25 @@ highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
+
 "去掉NonText和EndOfBuffer的~标志nvim only
-"for vim try :hi NonText ctermfg=bg guifg=bg
+"for vim try :hi NonText ctermfg=bg guifg=bg |:hi EndOfBuffer ctermfg=bg guifg=bg
+
 set fillchars=eob:\ ,fold:\ ,vert:\|
 
 "autocmd
 "trimwhitespace
 
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
+"fun! TrimWhitespace()
+"    let l:save = winsaveview()
+"    keeppatterns %s/\s\+$//e
+"    call winrestview(l:save)
+"endfun
 
-augroup Trim
-    autocmd!
-    autocmd BufWritePre * :call TrimWhitespace()
-augroup END
+"augroup Trim
+"    autocmd!
+"    autocmd BufWritePre * :call TrimWhitespace()
+"augroup END
 
 "augroup Java
 "    autocmd!

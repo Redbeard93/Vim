@@ -295,6 +295,7 @@ highlight ColorColumn ctermbg=Black guibg=#100D23
 highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Version 2 cyberpunk scheme
@@ -314,6 +315,7 @@ highlight ColorColumn ctermbg=Black guibg=#100D23
 highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
 
 "autocmd
 "trimwhitespace

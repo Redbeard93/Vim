@@ -326,18 +326,20 @@ set statusline+=\ %L
 "Plugin
 
 call plug#begin('~/.vim/plugged')
+
 Plug 'beeender/Comrade'
 Plug 'nvim-treesitter/nvim-treesitter',{'do': ':TSUpdate'}
 Plug 'Yggdroot/indentLine'
 "Plug 'luochen1990/rainbow'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'gruvbox-community/gruvbox'
 Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"Plug 'plasticboy/vim-markdown'
+"Plug 'gruvbox-community/gruvbox'
 "Plug 'artur-shaik/vim-javacomplete2'
 "Plug 'ycm-core/YouCompleteMe'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -345,17 +347,17 @@ call plug#end()
 
 " 设置vim的内部编码，在neovim上不需要，因为coc.nvim使用了一些
 " autoload / float.vim文件中的unicode字符
-set encoding=utf-8
+"set encoding=utf-8
 " 如果未设置“隐藏”，则TextEdit可能会失败。
-set hidden
+"set hidden
 " 某些服务器的备份文件有问题，请参阅＃649。
-set nobackup
-set nowritebackup
+"set nobackup
+"set nowritebackup
 " 留出更多空间来显示消息。
-set cmdheight=2
+"set cmdheight=2
 " 较长的更新时间（默认值为4000 ms = 4 s）会导致明显的
 " 延迟和糟糕的用户体验。
-set updatetime=300
+set updatetime=100
 " 不要将消息传递到| ins-completion-menu |。
 set shortmess+=c
 
@@ -438,8 +440,15 @@ augroup end
 
 " 将codeAction应用于所选区域。
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+function! s:cocActionsOpenSelected(type) abort
+    execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenSelected<CR>g
+nmap <leader>A :CocAction<CR>
 
 " 重新映射用于将codeAction应用于当前缓冲区的键。
 nmap <leader>ac  <Plug>(coc-codeaction)

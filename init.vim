@@ -31,10 +31,12 @@ set wildmenu
 set showcmd
 syntax on
 filetype plugin indent on
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 在被分割的窗口间显示空白，便于阅读
 
 set fillchars="vert:│,fold:·,sep:│"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Undo settings
 
@@ -47,10 +49,67 @@ if has('persistent_undo')
     set undodir=~/.config/nvim/tmp/undo,.
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"ColorScheme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"colorscheme gruvbox
+"set background=dark
+"let g:gruvbox_transparent_bg=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Version 1 cyberpunk high contrast scheme
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight StatusLine ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight StatusLineNC ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight TabLineSel gui=bold ctermbg=NONE guibg=#9E619E guifg=#100D23
+highlight TabLineFill ctermbg=NONE guibg=#372963 guifg=#619E9E
+highlight TabLine gui=NONE ctermbg=NONE guibg=#619E9E guifg=#372963
+"highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
+highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#619E9E
+highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#9E619E
+highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
+highlight ColorColumn ctermbg=Black guibg=#100D23
+highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Version 2 cyberpunk scheme
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight StatusLine ctermbg=NONE guibg=#9E619E guifg=#100D23
+highlight StatusLineNC ctermbg=NONE guibg=#9E619E guifg=#100D23
+highlight TabLine gui=None ctermbg=NONE guibg=#100D23 guifg=#9E619E
+highlight TabLineFill ctermbg=NONE gui=NONE guibg=#9E619E guifg=#100D23
+highlight TabLineSel ctermbg=NONE gui=bold guibg=#372963 guifg=#619E9E
+"highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
+highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
+highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
+highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
+highlight ColorColumn ctermbg=Black guibg=#100D23
+highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
+highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"去掉NonText和EndOfBuffer的~标志nvim only
+
+"for vim try :hi NonText ctermfg=bg guifg=bg |:hi EndOfBuffer ctermfg=bg guifg=bg
+
+set fillchars=eob:\ ,fold:\ ,vert:\|
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " open up a terminal window
+
 nnoremap <leader>t :bo 12new<CR>:terminal<CR>
 nnoremap <leader>tr :resize 12<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Pairs
 
@@ -59,8 +118,6 @@ inoremap { {}<ESC>i<CR><ESC>ko
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap <c-d> <DELETE>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"括号补全
 inoremap ] <c-r>=SkipSquarebrackets()<CR>
 inoremap ) <c-r>=SkipParentheses()<CR>
 
@@ -79,6 +136,7 @@ func SkipSquarebrackets()
         return "]"
     endif
 endfunc
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "move visual selected
 
@@ -246,79 +304,6 @@ set statusline+=%c
 set statusline+=\ %L
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plugin
-
-call plug#begin('~/.vim/plugged')
-Plug 'beeender/Comrade'
-Plug 'nvim-treesitter/nvim-treesitter',{'do': ':TSUpdate'}
-Plug 'Yggdroot/indentLine'
-"Plug 'luochen1990/rainbow'
-Plug 'honza/vim-snippets'
-Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'gruvbox-community/gruvbox'
-Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-"Plug 'artur-shaik/vim-javacomplete2'
-"Plug 'ycm-core/YouCompleteMe'
-call plug#end()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"ColorScheme
-
-"colorscheme gruvbox
-"set background=dark
-"let g:gruvbox_transparent_bg=1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Version 1 cyberpunk high contrast scheme
-
-highlight Normal ctermbg=NONE guibg=NONE
-highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight StatusLine ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight StatusLineNC ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight TabLineSel gui=bold ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight TabLineFill ctermbg=NONE guibg=#372963 guifg=#619E9E
-highlight TabLine gui=NONE ctermbg=NONE guibg=#619E9E guifg=#372963
-"highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
-highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#619E9E
-highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#9E619E
-highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
-highlight ColorColumn ctermbg=Black guibg=#100D23
-highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
-highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Version 2 cyberpunk scheme
-
-highlight Normal ctermbg=NONE guibg=NONE
-highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight StatusLine ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight StatusLineNC ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight TabLine gui=None ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight TabLineFill ctermbg=NONE gui=NONE guibg=#9E619E guifg=#100D23
-highlight TabLineSel ctermbg=NONE gui=bold guibg=#372963 guifg=#619E9E
-"highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
-highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
-highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
-highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
-highlight ColorColumn ctermbg=Black guibg=#100D23
-highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
-highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
-
-"去掉NonText和EndOfBuffer的~标志nvim only
-"for vim try :hi NonText ctermfg=bg guifg=bg |:hi EndOfBuffer ctermfg=bg guifg=bg
-
-set fillchars=eob:\ ,fold:\ ,vert:\|
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 "trimwhitespace
 
 "fun! TrimWhitespace()
@@ -336,6 +321,24 @@ set fillchars=eob:\ ,fold:\ ,vert:\|
 "    autocmd!
 "    autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plugin
+
+call plug#begin('~/.vim/plugged')
+Plug 'beeender/Comrade'
+Plug 'nvim-treesitter/nvim-treesitter',{'do': ':TSUpdate'}
+Plug 'Yggdroot/indentLine'
+"Plug 'luochen1990/rainbow'
+Plug 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'gruvbox-community/gruvbox'
+Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'ycm-core/YouCompleteMe'
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Coc
@@ -500,11 +503,13 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "IndentLine
 
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
 let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "nvim-treesitter
 
@@ -524,6 +529,7 @@ let g:mkdp_markdown_css='/home/o/.local/lib/github-mkdp_markdown_css/github-mark
 let g:mkdp_browser = '/home/o/surf/surf'
 nmap <leader>mp <Plug>MarkdownPreview
 nmap <leader>ms <Plug>MarkdownPreviewStop
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Markdown Title settings
 
@@ -600,5 +606,6 @@ endfunction
 
 :map <F3> :call CPPTitleInsert()<CR>ggjjA
 :autocmd FileWritePre,BufWritePre *.cpp ks|call DateInsert()|'s
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings Graveyard

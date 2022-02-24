@@ -80,22 +80,22 @@ highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Version 2 cyberpunk scheme
 
-highlight Normal ctermbg=NONE guibg=NONE
-highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight StatusLine ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight StatusLineNC ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight TabLine gui=None ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight TabLineFill ctermbg=NONE gui=NONE guibg=#9E619E guifg=#100D23
-highlight TabLineSel ctermbg=NONE gui=bold guibg=#372963 guifg=#619E9E
+"highlight Normal ctermbg=NONE guibg=NONE
+"highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
+"highlight StatusLine ctermbg=NONE guibg=#9E619E guifg=#100D23
+"highlight StatusLineNC ctermbg=NONE guibg=#9E619E guifg=#100D23
+"highlight TabLine gui=None ctermbg=NONE guibg=#100D23 guifg=#9E619E
+"highlight TabLineFill ctermbg=NONE gui=NONE guibg=#9E619E guifg=#100D23
+"highlight TabLineSel ctermbg=NONE gui=bold guibg=#372963 guifg=#619E9E
 "highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
-highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
-highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
-highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
-highlight ColorColumn ctermbg=Black guibg=#100D23
-highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
-highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
+"highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#9E619E
+"highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#619E9E
+"highlight CursorLineNr cterm=bold gui=bold ctermbg=NONE guibg=NONE ctermfg=LightYellow guifg=#9E9E61
+"highlight ColorColumn ctermbg=Black guibg=#100D23
+"highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+"highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
+"highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
+"highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "去掉NonText和EndOfBuffer的~标志nvim only

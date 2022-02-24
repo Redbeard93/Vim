@@ -335,6 +335,7 @@ Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"Plug 'luochen1990/rainbow'
 "Plug 'plasticboy/vim-markdown'
 "Plug 'gruvbox-community/gruvbox'
 "Plug 'artur-shaik/vim-javacomplete2'

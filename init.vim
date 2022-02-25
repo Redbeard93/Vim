@@ -57,11 +57,11 @@ endif
 
 highlight Normal ctermbg=NONE guibg=NONE
 highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight StatusLine ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight StatusLineNC ctermbg=NONE guibg=#100D23 guifg=#9E619E
-highlight TabLineSel gui=bold ctermbg=NONE guibg=#9E619E guifg=#100D23
-highlight TabLineFill ctermbg=NONE guibg=#372963 guifg=#619E9E
-highlight TabLine gui=NONE ctermbg=NONE guibg=#619E9E guifg=#372963
+highlight StatusLine cterm=italic ctermbg=DarkCyan ctermfg=DarkMagenta guibg=#100D23 guifg=#9E619E
+highlight StatusLineNC cterm=italic ctermbg=DarkCyan ctermfg=DarkMagenta guibg=#100D23 guifg=#9E619E
+highlight TabLineSel cterm=NONE gui=bold ctermbg=DarkCyan ctermfg=DarkMagenta guibg=#9E619E guifg=#100D23
+highlight TabLineFill ctermbg=DarkMagenta ctermfg=DarkMagenta guibg=#372963 guifg=#619E9E
+highlight TabLine cterm=italic gui=NONE ctermbg=DarkMagenta ctermfg=DarkCyan guibg=#619E9E guifg=#372963
 "highlight LineNr cterm=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=NONE
 highlight LineNrBelow cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkMagenta guifg=#619E9E
 highlight LineNrAbove cterm=italic gui=italic ctermbg=NONE guibg=NONE ctermfg=DarkCyan guifg=#9E619E
@@ -70,7 +70,7 @@ highlight ColorColumn ctermbg=Black guibg=#100D23
 highlight SignColumn ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 highlight CursorLine cterm=bold gui=bold ctermbg=NONE guibg=NONE
 highlight CursorColumn cterm=bold gui=bold ctermbg=NONE guibg=NONE
-highlight VertSplit cterm=NONE gui=NONE guifg=#9E9E61
+highlight VertSplit cterm=NONE gui=NONE ctermfg=LightYellow guifg=#9E9E61
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Version 2 cyberpunk scheme

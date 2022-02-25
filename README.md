@@ -1,4 +1,4 @@
-# Vim
+# Vim - where everything started
 
 "these three lines are actually needed for true color abled in vim"
 ```

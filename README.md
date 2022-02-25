@@ -3,7 +3,8 @@
 "these three lines are actually needed for true color abled in vim"
 ```
 "set termguicolors
-"set t_8f=^[[38;2;%lu;%lu;%lum " You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
+" You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
+"set t_8f=^[[38;2;%lu;%lu;%lum 
 "set t_8b=^[[48;2;%lu;%lu;%lum
 ```
 init.vim is for *Neovim*

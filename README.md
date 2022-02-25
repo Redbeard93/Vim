@@ -6,6 +6,12 @@
 " You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
 "set t_8f=^[[38;2;%lu;%lu;%lum 
 "set t_8b=^[[48;2;%lu;%lu;%lum
+" or
+" just use
+
+" set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 ```
 init.vim is for *Neovim*
 

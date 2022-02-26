@@ -1,7 +1,9 @@
 "13/SEP/2021 Updated
 "Vimrc注释的语法是"不是#，#会报错
 set termguicolors
-set t_8f=^[[38;2;%lu;%lu;%lum " You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
+" You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
+set t_8f=^[[38;2;%lu;%lu;%lum 
+" You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
 set t_8b=^[[48;2;%lu;%lu;%lum
 set path=.,**
 set suffixesadd=.java

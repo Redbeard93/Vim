@@ -21,6 +21,7 @@ init.vim is for *Neovim*
 
 配置文件 
 
+## Transparency
 
 https://www.reddit.com/r/vim/comments/gbfy8u/set_vim_theme_but_also_keeping_the_terminal/  
 

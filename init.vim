@@ -75,9 +75,11 @@ endif
 
 "Version 1 cyberpunk high contrast scheme
 
+highlight Cursor guibg=#9E619E guifg=#619E9E
 highlight ModeMsg guibg=NONE guifg=#619E9E
 highlight Search guibg=#619E9E guifg=#9E619E
-highlight IncSearch guibg=#619E9E guifg=#9E619E
+highlight IncSearch guibg=#9E619E guifg=#619E9E
+highlight WildMenu guibg=#9E619E guifg=#619E9E
 
 highlight Normal ctermbg=NONE guibg=NONE
 highlight Pmenu cterm=bold gui=bold ctermbg=NONE guibg=NONE

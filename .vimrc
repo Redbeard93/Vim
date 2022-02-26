@@ -31,6 +31,7 @@ set cuc cul
 set wildmode=longest,list,full
 set wildmenu
 set showcmd
+set ignorecase
 syntax on
 filetype plugin indent on
 

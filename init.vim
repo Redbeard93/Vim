@@ -9,6 +9,11 @@
 " You should input actual escape for ^[. Use <Ctrl-V><Esc> to input actual escape."
 "set t_8b=^[[48;2;%lu;%lu;%lum
 
+" 设定在无操作时，交换文件刷写到磁盘的等待毫秒数（默认为 4000）
+set updatetime = 100
+" 设定等待按键时长的毫秒数
+set timeoutlen = 500
+
 "是否开启 xterm 兼容的终端 24 位色彩支持
 set termguicolors
 set path=.,**

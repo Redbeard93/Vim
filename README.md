@@ -30,6 +30,7 @@ gg=G
 ``` 
 indent everything  
 
+## A display error
 
 While moving the cursor across a vim process open in a tmux session, every now and then, why does it leave a trail of ghost characters - ^[OB, ^[OA?  
 

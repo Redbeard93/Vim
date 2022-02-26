@@ -1,5 +1,7 @@
 # Vim - where everything started
 
+## True Color in Vim
+
 "these three lines are actually needed for true color abled in vim"
 ```
 "set termguicolors

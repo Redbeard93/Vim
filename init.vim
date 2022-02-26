@@ -32,8 +32,15 @@ set scrolloff=8
 set signcolumn=yes
 set cuc cul
 set wildmode=longest,list,full
+
+"命令模式补全
 set wildmenu
+
 set showcmd
+
+"命令模式搜索命令可以无视大小写区别
+set ignorecase
+
 syntax on
 filetype plugin indent on
 

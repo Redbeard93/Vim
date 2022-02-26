@@ -49,7 +49,7 @@ set showcmd
 "命令模式搜索命令可以无视大小写区别
 set ignorecase
 
-syntax on
+
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -637,4 +637,5 @@ endfunction
 :autocmd FileWritePre,BufWritePre *.cpp ks|call DateInsert()|'s
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
 " Plugin settings Graveyard

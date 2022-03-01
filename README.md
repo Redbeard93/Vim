@@ -80,3 +80,7 @@ javac.vim 与 java.vim的使用方式：放在这里：
 
 `/.config/nvim/compiler/javac.vim`
 `/.config/nvim/ftplugin/java.vim`
+
+2022-03-01
+
+nvim 进入0.6版本 coc的vim和nvim就先用到这里， 虽然还不太懂lua但今天刚刚用lua配好nvim加上 nvim-lspconfig 和nvim-cmp 与nvim-jdtls，此仓库进入archive，从此正式转用 nvim 仓库

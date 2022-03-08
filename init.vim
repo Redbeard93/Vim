@@ -306,22 +306,19 @@ function! StatuslineGit()
     let l:branchname = GitBranch()
     return strlen(l:branchname) >0?' '.l:branchname.' ':''
 endfunction
+
 set laststatus=2
 set statusline=
-set statusline+=%{StatuslineGit()}
-set statusline+=\ %.33F
-set statusline+=\ -
-set statusline+=\ FileType:
-set statusline+=%y
+set statusline+=\ \ %{StatuslineGit()}
+set statusline+=\ \ %.33F
+set statusline+=\ \ \ %y
 set statusline+=%=
-set statusline+=\ [%{&fileencoding?&fileencoding:&encoding}]
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ ——
-set statusline+=%l
-set statusline+=\|
-set statusline+=%c
-set statusline+=\ %L
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\ 
+set statusline+=\ %{&fileformat}\\ 
+set statusline+=\ 錄%L\ 
+set statusline+=\ \ %l\ 
+set statusline+=\ \ %c\ 
+set statusline+=\ ﴜ\ %p\ 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "trimwhitespace

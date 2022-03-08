@@ -304,12 +304,11 @@ endfunction
 
 function! StatuslineGit()
     let l:branchname = GitBranch()
-    return strlen(l:branchname) >0?' '.l:branchname.' ':''
+    return strlen(l:branchname) >0?' '.' '.l:branchname.' ':''
 endfunction
-
 set laststatus=2
 set statusline=
-set statusline+=\ \ %{StatuslineGit()}
+set statusline+=\ %{StatuslineGit()}
 set statusline+=\ \ %.33F
 set statusline+=\ \ \ %y
 set statusline+=%=

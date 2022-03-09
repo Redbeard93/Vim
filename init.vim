@@ -309,8 +309,8 @@ endfunction
 set laststatus=2
 set statusline=
 set statusline+=\ %{StatuslineGit()}
-set statusline+=\ \ %.33F
-set statusline+=\ \ \ %y
+set statusline+=\ \ %.33F
+set statusline+=\ \ \ %y
 set statusline+=%=
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\ 
 set statusline+=\ %{&fileformat}\\ 

@@ -99,8 +99,21 @@ match什么东西
 # 19 `:?^$?+1,/^$/-1!ls`
 把当前段落的内容替换成外部命令ls的输出：向后搜索空行后向前移动一行，向前搜索空行向后移动一行（这样就选中了这个段落，空行没选），替换成ls命令
 
-# 20 `:'<,'> normal 0i666'
-在visual mode 选中多行按： 后进入命令模式，在后面输入normal表示进入选中的多行的命令模式 再加上代表命令的0i666 表示光标移动到每行行首进入输入模式输入666
+# 20 `:'<,'> normal 0i666 ^[ 4j'
+在visual mode 选中多行按： 后进入命令模式，在后面输入normal表示进入选中的多行的命令模式 再加上代表命令的0i666 表示光标移动到每行行首进入输入模式输入666 之后的^[ 是通过按下ctrl v 之后按Esc 得到的特殊字符表示Esc的命令来退出insert mode而不是在insert模式下输入Esc三个字符 4j 表示光标下移4行 
+
+
+>（附：ctrl k 加上下面的两个字符可以打印更特殊的字符）
+> oo • (bullet)
+> Db ◆ (diamond bullet)
+> '% ϴ (Greek theta)
+> Pd £ (British pound symbols)
+> Co © (copyright symbol)
+> Rg ® (registered trademark symbol)
+> Eu € (euro symbol)
+> -1 ‐ (hyphen)
+> -N – (en dash)
+> -M — (em dash)
 
 # 21 'g <c-a>'
 在visual mode 中 选中多行数字 随后输入 g 和 ctrl a 表示每行数字在最上行加一后每下一行在上一行增加的数字再加一，输入 2g 和 ctrl x 表示最上边一行减2后每下一行数字在上一行减少的数字再减二

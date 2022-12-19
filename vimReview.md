@@ -104,15 +104,25 @@ match什么东西
 
 
 >（附：ctrl k 加上下面的两个字符可以打印更特殊的字符）
+
 > oo • (bullet)
+
 > Db ◆ (diamond bullet)
+
 > '% ϴ (Greek theta)
+
 > Pd £ (British pound symbols)
+
 > Co © (copyright symbol)
+
 > Rg ® (registered trademark symbol)
+
 > Eu € (euro symbol)
+
 > -1 ‐ (hyphen)
+
 > -N – (en dash)
+
 > -M — (em dash)
 
 # 21 'g <c-a>'

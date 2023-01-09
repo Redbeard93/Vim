@@ -25,11 +25,9 @@ init.vim is for *Neovim*
 
 https://www.reddit.com/r/vim/comments/gbfy8u/set_vim_theme_but_also_keeping_the_terminal/  
 
-```
-gg=G
 
-``` 
-indent everything  
+command: `gg=G` indent everything  
+
 
 ## A display error
 

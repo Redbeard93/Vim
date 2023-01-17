@@ -127,3 +127,5 @@ match什么东西
 
 # 21 'g <c-a>'
 在visual mode 中 选中多行数字 随后输入 g 和 ctrl a 表示每行数字在最上行加一后每下一行在上一行增加的数字再加一，输入 2g 和 ctrl x 表示最上边一行减2后每下一行数字在上一行减少的数字再减二
+
+# 22 g_ -- To the last non-blank character of the lin
